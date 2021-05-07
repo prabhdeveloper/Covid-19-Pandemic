@@ -1,0 +1,911 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/85db7100b3.js" crossorigin="anonymous"></script>
+    <title>Covid Help & Info</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="website1.css">
+</head>
+<style>
+    .nav-link {
+        color: black !important;
+        padding: 20px !important;
+        font-size: 20px !important;
+    }
+
+    .nav-link:hover {
+        color: rgb(197, 31, 31) !important;
+    }
+
+    body {
+        font-family: sans-serif;
+        background-color: #d3d3d326 !important;
+    }
+
+    .Foundation__Outer-sc-11tbro4-0 {
+        background-color: #dbd5cc !important;
+    }
+
+    .card_li {
+        text-align: left;
+    }
+
+    .menu a {
+        text-decoration: none !important;
+        color: white !important;
+    }
+
+    .menu li {
+        font-size: 16px;
+        line-height: 23px;
+        list-style: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 10px 0;
+    }
+
+    #carouselExampleFade img {
+        width: 100%;
+        height: 500px;
+    }
+
+    @media screen and (max-width: 900px) {
+        #carouselExampleFade img {
+            width: 100%;
+            height: 350px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        #carouselExampleFade img {
+            width: 100%;
+            height: 240px;
+        }
+    }
+</style>
+
+<body>
+    <nav id="nav" style="padding: 0;background-color: #c5e1a5b0 !important;"
+        class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation" style="    color: white !important;background-color: white;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <img src="https://www.thecompassforsbc.org/sites/default/files/COVID-19%20icon%202FINAL.png" alt="logo"
+                    width="70px">
+                <ul style="width: 100%; " class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="vaccine.html">Vaccines</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Emergency Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown"
+                            style="margin-left: 35px; padding: 10px;">
+                            <li><a class="dropdown-item" href="ambulance.html">Ambulance</a></li>
+                            <li><a class="dropdown-item" href="oxygen.html">Emergency Oxygen</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a style="cursor: pointer;" class="nav-link active" aria-current="page" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal1">Contact Us</a>
+
+                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div align="center" class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="row g-3">
+                                            <div class="col-md-12">
+                                                <label for="inputEmail4" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="inputEmail4">
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="inputAddress" class="form-label">Address</label>
+                                                <input type="text" class="form-control" id="inputAddress"
+                                                    placeholder="1234 Main St">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="inputCity" class="form-label">City</label>
+                                                <input type="text" class="form-control" id="inputCity">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="inputState" class="form-label">State</label>
+                                                <select id="inputState" class="form-select">
+                                                    <option selected value="AL">India</option>
+                                                    <option value="AL">Alabama</option>
+                                                    <option value="AK">Alaska</option>
+                                                    <option value="AZ">Arizona</option>
+                                                    <option value="AR">Arkansas</option>
+                                                    <option value="CA">California</option>
+                                                    <option value="CO">Colorado</option>
+                                                    <option value="CT">Connecticut</option>
+                                                    <option value="DE">Delaware</option>
+                                                    <option value="DC">District Of Columbia</option>
+                                                    <option value="FL">Florida</option>
+                                                    <option value="GA">Georgia</option>
+                                                    <option value="HI">Hawaii</option>
+                                                    <option value="ID">Idaho</option>
+                                                    <option value="IL">Illinois</option>
+                                                    <option value="IN">Indiana</option>
+                                                    <option value="IA">Iowa</option>
+                                                    <option value="KS">Kansas</option>
+                                                    <option value="KY">Kentucky</option>
+                                                    <option value="LA">Louisiana</option>
+                                                    <option value="ME">Maine</option>
+                                                    <option value="MD">Maryland</option>
+                                                    <option value="MA">Massachusetts</option>
+                                                    <option value="MI">Michigan</option>
+                                                    <option value="MN">Minnesota</option>
+                                                    <option value="MS">Mississippi</option>
+                                                    <option value="MO">Missouri</option>
+                                                    <option value="MT">Montana</option>
+                                                    <option value="NE">Nebraska</option>
+                                                    <option value="NV">Nevada</option>
+                                                    <option value="NH">New Hampshire</option>
+                                                    <option value="NJ">New Jersey</option>
+                                                    <option value="NM">New Mexico</option>
+                                                    <option value="NY">New York</option>
+                                                    <option value="NC">North Carolina</option>
+                                                    <option value="ND">North Dakota</option>
+                                                    <option value="OH">Ohio</option>
+                                                    <option value="OK">Oklahoma</option>
+                                                    <option value="OR">Oregon</option>
+                                                    <option value="PA">Pennsylvania</option>
+                                                    <option value="RI">Rhode Island</option>
+                                                    <option value="SC">South Carolina</option>
+                                                    <option value="SD">South Dakota</option>
+                                                    <option value="TN">Tennessee</option>
+                                                    <option value="TX">Texas</option>
+                                                    <option value="UT">Utah</option>
+                                                    <option value="VT">Vermont</option>
+                                                    <option value="VA">Virginia</option>
+                                                    <option value="WA">Washington</option>
+                                                    <option value="WV">West Virginia</option>
+                                                    <option value="WI">Wisconsin</option>
+                                                    <option value="WY">Wyoming</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label for="inputZip" class="form-label">Zip</label>
+                                                <input type="text" class="form-control" id="inputZip">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label for="exampleFormControlTextarea1"
+                                                    class="form-label">About</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                    rows="3"></textarea>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="width: 30%;" class="collapse navbar-collapse" id="navbarSupportedContent1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a id="gmail_link" class="nav-link" href="https://mail.google.com/mail/u/0/#inbox?compose=new">
+                            <i class="fas fa-envelope-square"></i>
+                            rajanyajoshi02@gmail.com</a>
+                    </li>
+                    <li style="padding: 23px;" class="nav-item active">
+                        <i class="fas fa-phone"></i> 9877632145
+                    </li>
+                    <li style="padding: 12px;" class="nav-item active">
+                        Date : <span id="date"></span><br>
+                        Time : <span id="time"></span>
+                    </li>
+                </ul>
+            </div>
+            <script>function display_ct7() {
+                    var x = new Date()
+                    var ampm = x.getHours() >= 12 ? ' PM' : ' AM';
+                    hours = x.getHours() % 12;
+                    hours = hours ? hours : 12;
+                    hours = hours.toString().length == 1 ? 0 + hours.toString() : hours;
+
+                    var minutes = x.getMinutes().toString()
+                    minutes = minutes.length == 1 ? 0 + minutes : minutes;
+
+                    var seconds = x.getSeconds().toString()
+                    seconds = seconds.length == 1 ? 0 + seconds : seconds;
+
+                    var month = (x.getMonth() + 1).toString();
+                    month = month.length == 1 ? 0 + month : month;
+
+                    var dt = x.getDate().toString();
+                    dt = dt.length == 1 ? 0 + dt : dt;
+
+                    var x1 = month + "/" + dt + "/" + x.getFullYear();
+                    document.getElementById('date').innerHTML = x1;
+                    x2 = hours + ":" + minutes + ":" + seconds + " " + ampm;
+                    document.getElementById('time').innerHTML = x2;
+                    display_c7();
+                }
+                function display_c7() {
+                    var refresh = 1000; // Refresh rate in milli seconds
+                    mytime = setTimeout('display_ct7()', refresh)
+                }
+                display_c7()
+            </script>
+        </div>
+    </nav>
+
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://img2.storyblok.com/filters:quality(90)/f/81332/1920x640/a7e35fc94b/hero-1920-640-spotlight-on-vaccines-covid-hub-hero-block.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.who.int/images/default-source/health-topics/coronavirus/gettyimages-1203376093.tmb-1920v.png?Culture=en&sfvrsn=6e0c1bc7_6"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://source.wustl.edu/wp-content/uploads/2020/03/martin-sanchez-j2c7yf223Mk-unsplash-scaled.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.pharmaceutical-technology.com/wp-content/uploads/sites/10/2020/03/coronavirus_1303.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://static.euronews.com/articles/stories/04/85/14/12/1440x810_cmsv2_060ccbe2-9b35-5f55-90b7-79daaba792b3-4851412.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div id="space" style="height: 100px;">
+    </div>
+
+    <div id="stats" class="container-fluid">
+        <div align="center" class="col-md-12 col-sm-12 col-12">
+            <div style="background-color: #dbd5cc !important;" class="col-md-6 col-sm-12 col-12">
+                <div style="border: 3px solid #00000075;" class="container">
+                    <div class="elfsight-app-2adfacd0-a462-4253-9a86-f068858d6f00">
+                        <div id="eapps-coronavirus-stats-2adfacd0-a462-4253-9a86-f068858d6f00"
+                            data-app="eapps-coronavirus-stats" data-app-version="1.0.0"
+                            class="jsx-2851616107 eapp-coronavirus-stats-root-layout-component eapps-coronavirus-stats-2adfacd0-a462-4253-9a86-f068858d6f00-custom-css-hook">
+                            <div
+                                class="Foundation__Outer-sc-11tbro4-0 kKKhxL Nutshell__StyledFoundation-sc-135svds-0 hYHFwd">
+                                <div class="Foundation__Inner-sc-11tbro4-1 kJrSUb">
+                                    <div class="Main__Inner-xz49ti-0 mRKLb">
+                                        <div class="Main__Title-xz49ti-1 bqmozG">Coronavirus Statistics</div>
+                                        <div class="Grid__Component-sc-1fhx9tu-0 bFgTzt">
+                                            <div class="Grid__Container-sc-1fhx9tu-1 jdXyLH">
+                                                <div class="Grid__Container-x730z7-0 dvlMxW" style="padding-left: 0px;">
+                                                    <div style="width: 400px; margin-top: 0px; margin-right: 0px;">
+                                                        <div class="Card__Component-sc-1ac5eyf-0 hEysQL">
+                                                            <div
+                                                                class="Country__Component-wsxagk-0 knDYZW Card__StyledCountry-sc-1ac5eyf-1 gEYyiT">
+                                                                <div class="Country__Inner-wsxagk-1 RwSzq">
+                                                                    <figure size="18"
+                                                                        class="ImageLoader__Container-sc-1tcx205-0 dbJqPZ Flag__IconContainer-sc-1hdc3hs-0 kuLRzh">
+                                                                        <img src="https://static.elfsight.com/apps/coronavirus-stats/flags/ind.svg"
+                                                                            class="Flag__IconComponentImg-sc-1hdc3hs-1 fSVOrV">
+                                                                    </figure>India
+                                                                </div>
+                                                            </div>
+                                                            <div class="Card__Counters-sc-1ac5eyf-2 eTPhus">
+                                                                <div
+                                                                    class="Counter__Component-sc-1iqzqwn-0 cjEBVV Card__StyledCounter-sc-1ac5eyf-3 kHyklx">
+                                                                    <div
+                                                                        class="Counter__NameContainer-sc-1iqzqwn-1 RJtqb">
+                                                                        <div class="Counter__Name-sc-1iqzqwn-2 bkaa-dm">
+                                                                            Cases</div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="Counter__ValueContainer-sc-1iqzqwn-3 lgsCyK">
+                                                                        <div class="Counter__Value-sc-1iqzqwn-4 fYlHhL">
+                                                                            21,070,852
+                                                                        </div>
+                                                                        <div color="#E96B38"
+                                                                            class="Counter__ValueIncrement-sc-1iqzqwn-5 gKyKjR">
+                                                                            +412,618&nbsp;</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="Counter__Component-sc-1iqzqwn-0 cjEBVV Card__StyledCounter-sc-1ac5eyf-3 kHyklx">
+                                                                    <div
+                                                                        class="Counter__NameContainer-sc-1iqzqwn-1 RJtqb">
+                                                                        <div class="Counter__Name-sc-1iqzqwn-2 bkaa-dm">
+                                                                            Deaths</div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="Counter__ValueContainer-sc-1iqzqwn-3 lgsCyK">
+                                                                        <div class="Counter__Value-sc-1iqzqwn-4 fYlHhL">
+                                                                            230,151
+                                                                        </div>
+                                                                        <div color="#e02020"
+                                                                            class="Counter__ValueIncrement-sc-1iqzqwn-5 eFEcor">
+                                                                            +3,982&nbsp;</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="Counter__Component-sc-1iqzqwn-0 cjEBVV Card__StyledCounter-sc-1ac5eyf-3 kHyklx">
+                                                                    <div
+                                                                        class="Counter__NameContainer-sc-1iqzqwn-1 RJtqb">
+                                                                        <div class="Counter__Name-sc-1iqzqwn-2 bkaa-dm">
+                                                                            Recovered
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="Counter__ValueContainer-sc-1iqzqwn-3 lgsCyK">
+                                                                        <div class="Counter__Value-sc-1iqzqwn-4 fYlHhL">
+                                                                            17,269,076
+                                                                        </div>
+                                                                        <div color="#48b409"
+                                                                            class="Counter__ValueIncrement-sc-1iqzqwn-5 tWFrl">
+                                                                            &nbsp;</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Main__Footer-xz49ti-2 gVryDy">Updated:&nbsp;<time
+                                                datetime="May 6, 2021, 1:26 AM GMT+5:30"
+                                                title="May 6, 2021, 1:26 AM GMT+5:30"
+                                                class="DateTime__Time-sc-13gi7wj-0 kUVVHj">May 6, 1:26
+                                                AM</time><br>Data
+                                            from: World
+                                            Health Organization (WHO)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 100px;">
+    </div>
+
+    <div align="center" class="container-fluid">
+        <div class="col-md-12 col-sm-12 col-12">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-12">
+                    <img style="border: 3px solid lightgray;" src="graph1.png" alt="" width="90%">
+                </div>
+                <div class="col-md-6 col-sm-12 col-12">
+                    <img style="border: 3px solid lightgray;" src="graph2.png" alt="" width="90%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 50px;"></div>
+
+    <div style="height: 100px;">
+        <center>
+            <h3 style="padding: 33px;font-style: italic;font-size: 30px;">
+                Important Information
+            </h3>
+        </center>
+    </div>
+
+    <div id="overview" class="container">
+        <div style="border-left: 5px solid black;background-color: aliceblue;padding: 10px;"
+            class="col-md-12 col-sm-12 col-12">
+            <h3 style="font-style: oblique;">Overview</h3>
+            <div style="font-family: 'Ubuntu', sans-serif;">
+                <p>
+                    Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
+                </p>
+                <p>
+                    Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness
+                    and
+                    recover without requiring special treatment. Older people, and those with underlying medical
+                    problems
+                    like
+                    cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop
+                    serious
+                    illness.
+                </p>
+                <p>
+                    The best way to prevent and slow down transmission is to be well informed about the COVID-19 virus,
+                    the
+                    disease it causes and how it spreads. Protect yourself and others from infection by washing your
+                    hands
+                    or
+                    using an alcohol based rub frequently and not touching your face.
+                </p>
+
+                <p>
+                    The COVID-19 virus spreads primarily through droplets of saliva or discharge from the nose when an
+                    infected
+                    person coughs or sneezes, so it’s important that you also practice respiratory etiquette (for
+                    example,
+                    by
+                    coughing into a flexed elbow).
+                </p>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 50px;"></div>
+
+    <div id="prevention" class="container">
+        <div style="border-left: 5px solid black;background-color: aliceblue;padding: 10px;"
+            class="col-md-12 col-sm-12 col-12">
+            <h3 style="font-style: oblique;">Prevention</h3>
+            <div style="font-family: 'Ubuntu', sans-serif;">
+                To prevent infection and to slow transmission of COVID-19, do the following:
+                <ul>
+                    <li>
+                        Wash your hands regularly with soap and water, or clean them with alcohol-based hand rub.
+                    </li>
+                    <li>
+                        Maintain at least 1 metre distance between you and people coughing or sneezing.
+                    </li>
+                    <li>
+                        Avoid touching your face.
+                    </li>
+                    <li>
+                        Cover your mouth and nose when coughing or sneezing.
+                    </li>
+                    <li>
+                        Stay home if you feel unwell.
+                    </li>
+                    <li>
+                        Refrain from smoking and other activities that weaken the lungs.
+                    </li>
+                    <li>
+                        Practice physical distancing by avoiding unnecessary travel and staying away from large groups
+                        of
+                        people.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 50px;"></div>
+
+    <div id="symptoms" class="container">
+        <div style="border-left: 5px solid black;background-color: aliceblue;padding: 10px;"
+            class="col-md-12 col-sm-12 col-12">
+            <h3 style="font-style: oblique;">Symptoms</h3>
+
+            <div style="font-family: 'Ubuntu', sans-serif;">
+                COVID-19 affects different people in different ways. Most infected people will develop mild to moderate
+                illness and recover without hospitalization.
+
+                Most common symptoms:
+                <ul>
+                    <li>
+                        fever.
+                    </li>
+                    <li>
+                        dry cough.
+                    </li>
+                    <li>
+                        tiredness.
+                    </li>
+                </ul>
+                <hr>
+                Less common symptoms:
+                <ul>
+                    <li>
+                        aches and pains.
+                    </li>
+                    <li>
+                        sore throat.
+                    </li>
+                    <li>
+                        diarrhoea.
+                    </li>
+                    <li>
+                        conjunctivitis.
+                    </li>
+                    <li>
+                        headache.
+                    </li>
+                    <li>
+                        loss of taste or smell.
+                    </li>
+                    <li>
+                        a rash on skin, or discolouration of fingers or toes.
+                    </li>
+                </ul>
+                <hr>
+                Serious symptoms:
+                <ul>
+                    <li>
+                        difficulty breathing or shortness of breath.
+                    </li>
+                    <li>
+                        chest pain or pressure.
+                    </li>
+                    <li>
+                        loss of speech or movement.
+                    </li>
+                    <li>
+                        Seek immediate medical attention if you have serious symptoms. Always call before visiting your
+                        doctor or
+                        health facility.
+                    </li>
+                    <li>
+                        People with mild symptoms who are otherwise healthy should manage their symptoms at home.
+                    </li>
+                    <li>
+                        On average it takes 5–6 days from when someone is infected with the virus for symptoms to show,
+                        however it
+                        can take up to 14 days. </li>
+                    <li>
+                        To prevent infection and to slow transmission of COVID-19, do the following:
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div style="height:30px;"></div>
+    <div align="center" style="padding: 0px;font-style: italic;font-size: 30px;height:50px;">Awareness</div>
+    <div style="height:30px;"></div>
+
+
+    <script src="https://apps.elfsight.com/p/platform.js" defer=""></script>
+
+    <div class="container-fluid">
+        <div class="col-md-12 col-sm-12 col-12">
+            <div class="row">
+                <div align="center" class="col-md-3 col-sm-12 col-12">
+                    <div style="width: 100% !important;" class="card border-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">
+                            <h4>
+                                How To Protect Yourself
+                            </h4>
+                        </div>
+                        <div id="cards" class="card-body text-dark">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text">To prevent the spread of COVID-19:
+                            <ul>
+                                <li>
+                                    Clean your hands often. Use soap and water, or an alcohol-based hand rub.
+                                </li>
+                                <li>
+                                    Maintain a safe distance from anyone who is coughing or sneezing.
+                                </li>
+                                <li>
+                                    Wear a mask when physical distancing is not possible.
+                                </li>
+                                <li>
+                                    Don’t touch your eyes, nose or mouth.
+                                </li>
+                                <li>
+                                    Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze.
+                                </li>
+                                <li>
+                                    If you have a fever, cough and difficulty breathing, seek medical attention.</p>
+                                </li>
+                            </ul>
+                            Stay home if you feel unwell.
+                        </div>
+                    </div>
+                </div>
+                <div align="center" class="col-md-6 col-sm-12 col-12">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div align="center" style="color: white;" class="carousel-item active">
+                                <img style="width: 100% !important;" src="slideshow1.jpg" class="d-block w-100"
+                                    alt="...">
+                            </div>
+                            <div align="center" style="color: white;" class="carousel-item">
+                                <img style="width: 100% !important;" src="slideshow3.png" class="d-block w-100"
+                                    alt="...">
+                            </div>
+                            <div align="center" style="color: white;" class="carousel-item">
+                                <img style="width: 100% !important;" src="slideshow4.png" class="d-block w-100"
+                                    alt="...">
+                            </div>
+                            <div align="center" style="color: white;" class="carousel-item">
+                                <img style="width: 100% !important;" src="slideshow5.PNG" class="d-block w-100"
+                                    alt="...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 col-12">
+                    <div style="width: 100% !important;" align="center" class="card border-dark mb-3"
+                        style="max-width: 18rem;">
+                        <div class="card-header">
+                            <h4>
+                                How To Check Symptoms
+                            </h4>
+                        </div>
+                        <div class="card-body text-dark">
+                            <p class="card-text">Most common symptoms:
+                            <ul>
+                                <li class="card_li">
+                                    fever
+                                </li>
+                                <li class="card_li">
+                                    dry cough
+                                </li>
+                                <liclass="card_li">
+                                    tiredness
+                                    </li>
+                                    Less common symptoms:
+                                    <li class="card_li">
+                                        aches and pains
+                                    </li>
+                                    <li class="card_li">
+                                        sore throat
+                                    </li>
+                                    <li class="card_li">
+                                        diarrhoea
+                                    </li>
+                                    <li class="card_li">
+                                        conjunctivitis
+                                    </li>
+                                    <li class="card_li">
+                                        headache
+                                    </li>
+                                    <li class="card_li">
+                                        loss of taste or smell
+                                    </li>
+                                    <li class="card_li">
+                                        a rash on skin, or discolouration of fingers or toes</p>
+                                    </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height:50px;"></div>
+
+    <div id="videos" class="container">
+        <div class="col-md-12 col-sm-12 col-12">
+            <div class="videos">
+                <h3>About :</h3>
+                <iframe width="100%" height="500px" src="https://www.youtube.com/embed/UrcDLopNPV8"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+                <div style="height: 20px;"></div>
+
+                <h3>Prevention :</h3>
+
+                <div style="height: 20px;"></div>
+
+                <iframe style="width: 100%;height: 500px;" src="https://www.youtube.com/embed/KHCrYOGkLMM"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+            </div>
+        </div>
+    </div>
+
+    <div style="height:50px"></div>
+
+    <div align="center" style="color: white;background-color: #000000bf;" class="container">
+        <div class="col-md-12 col-sm-12 col-12">
+            <div class="row">
+                <div style="padding: 10px;" class="col-md-4 col-sm-6 col-12">
+                    <ul class="menu">
+                        <h3 style="font-weight: 400;font-size: 24px;line-height: 32px;">Quick Links</h3>
+                        <li>
+                            <a style="padding: 0px !important;font-size: 17px !important;cursor: pointer;"
+                                class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li><a style="padding: 0px !important;font-size: 17px !important;cursor: pointer;"
+                                class="nav-link active" href="vaccine.html">Vaccines</a></li>
+                        <li><a style="padding: 0px !important;font-size: 17px !important;cursor: pointer;"
+                                class="nav-link active" href="ambulance.html">Emergency Services</a></li>
+                        <li><a style="padding: 0px !important;font-size: 17px !important;cursor: pointer;"
+                                class="nav-link active" aria-current="page" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal1">Contact Us</a>
+
+                            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div align="center" class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="row g-3">
+                                                <div class="col-md-12">
+                                                    <label for="inputEmail4" class="form-label">Email</label>
+                                                    <input type="email" class="form-control" id="inputEmail4">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="inputAddress" class="form-label">Address</label>
+                                                    <input type="text" class="form-control" id="inputAddress"
+                                                        placeholder="1234 Main St">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="inputCity" class="form-label">City</label>
+                                                    <input type="text" class="form-control" id="inputCity">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="inputState" class="form-label">State</label>
+                                                    <select id="inputState" class="form-select">
+                                                        <option selected value="AL">India</option>
+                                                        <option value="AL">Alabama</option>
+                                                        <option value="AK">Alaska</option>
+                                                        <option value="AZ">Arizona</option>
+                                                        <option value="AR">Arkansas</option>
+                                                        <option value="CA">California</option>
+                                                        <option value="CO">Colorado</option>
+                                                        <option value="CT">Connecticut</option>
+                                                        <option value="DE">Delaware</option>
+                                                        <option value="DC">District Of Columbia</option>
+                                                        <option value="FL">Florida</option>
+                                                        <option value="GA">Georgia</option>
+                                                        <option value="HI">Hawaii</option>
+                                                        <option value="ID">Idaho</option>
+                                                        <option value="IL">Illinois</option>
+                                                        <option value="IN">Indiana</option>
+                                                        <option value="IA">Iowa</option>
+                                                        <option value="KS">Kansas</option>
+                                                        <option value="KY">Kentucky</option>
+                                                        <option value="LA">Louisiana</option>
+                                                        <option value="ME">Maine</option>
+                                                        <option value="MD">Maryland</option>
+                                                        <option value="MA">Massachusetts</option>
+                                                        <option value="MI">Michigan</option>
+                                                        <option value="MN">Minnesota</option>
+                                                        <option value="MS">Mississippi</option>
+                                                        <option value="MO">Missouri</option>
+                                                        <option value="MT">Montana</option>
+                                                        <option value="NE">Nebraska</option>
+                                                        <option value="NV">Nevada</option>
+                                                        <option value="NH">New Hampshire</option>
+                                                        <option value="NJ">New Jersey</option>
+                                                        <option value="NM">New Mexico</option>
+                                                        <option value="NY">New York</option>
+                                                        <option value="NC">North Carolina</option>
+                                                        <option value="ND">North Dakota</option>
+                                                        <option value="OH">Ohio</option>
+                                                        <option value="OK">Oklahoma</option>
+                                                        <option value="OR">Oregon</option>
+                                                        <option value="PA">Pennsylvania</option>
+                                                        <option value="RI">Rhode Island</option>
+                                                        <option value="SC">South Carolina</option>
+                                                        <option value="SD">South Dakota</option>
+                                                        <option value="TN">Tennessee</option>
+                                                        <option value="TX">Texas</option>
+                                                        <option value="UT">Utah</option>
+                                                        <option value="VT">Vermont</option>
+                                                        <option value="VA">Virginia</option>
+                                                        <option value="WA">Washington</option>
+                                                        <option value="WV">West Virginia</option>
+                                                        <option value="WI">Wisconsin</option>
+                                                        <option value="WY">Wyoming</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label for="inputZip" class="form-label">Zip</label>
+                                                    <input type="text" class="form-control" id="inputZip">
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label for="exampleFormControlTextarea1"
+                                                        class="form-label">About</label>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                        rows="3"></textarea>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div style="padding: 10px;" class="col-md-4 col-sm-6 col-12">
+                    <ul class="menu">
+                        <h3 align="center" style="font-weight: 400;font-size: 24px;line-height: 32px;">Important Links
+                        </h3>
+                        <li>
+                            <a style="padding: 0px !important;font-size: 17px !important;cursor: pointer;"
+                                class="nav-link active" href="index.html#nav">About</a>
+                        </li>
+                        <li><a style="padding: 0px !important;font-size: 17px !important;cursor: pointer;"
+                                class="nav-link active" href="index.html#stats">Statistics</a></li>
+                        <li><a style="padding: 0px !important;font-size: 17px !important;cursor: pointer;"
+                                class="nav-link active" href="index.html#overview">Overview</a>
+                        </li>
+                        <li><a style="padding: 0px !important;font-size: 17px !important;cursor: pointer;"
+                                class="nav-link active" href="index.html#prevention">Prevention</a></li>
+                        <li><a style="padding: 0px !important;font-size: 17px !important;cursor: pointer;"
+                                class="nav-link active" href="index.html#symptoms">Symptoms</a></li>
+                        <li><a style="padding: 0px !important;font-size: 17px !important;cursor: pointer;"
+                                class="nav-link active" href="index.html#videos">Videos</a></li>
+                    </ul>
+                </div>
+
+                <div align="center" style="color: lightgray;padding: 10px;" class="col-md-4 col-sm-6 col-12">
+                    <ul class="menu">
+                        <h3 align="center" style="color:white;font-weight: 400;font-size: 24px;line-height: 32px;">
+                            Connect Us</h3>
+                        <li><a href="https://www.facebook.com/coronavirus_info"><i style="margin: 4px;"
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/corona"><i style="margin: 4px;" class="fab fa-twitter"></i></a>
+                            <a href="https://www.youtube.com/results?search_query=covid-19+virus"><i
+                                    style="margin: 4px;" class="fab fa-youtube"></i></a>
+                            <a href="https://mail.google.com/mail/u/0/#inbox?compose=new"><i style="margin: 4px;"
+                                    class="fas fa-envelope"></i></a>
+                            <a href="https://www.instagram.com/coronavirustoday_latimes/"><i style="margin: 4px;"
+                                    class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 70px;"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

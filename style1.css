@@ -1,0 +1,47 @@
+input{
+    border: none;
+    border-bottom: 1px solid black;
+}
+input:focus{
+   outline:none;
+    border-bottom: 1px solid black;
+}
+.left{
+    width: fit-content;
+    float: left;
+}
+.right{
+    width: fit-content;
+    float: right;
+}
+.email{
+    clear:both;
+}
+button{
+    float: right;
+}
+form{
+    border: 1px solid black;
+    width: fit-content;
+    padding: 30px;
+    margin: 100px;
+}
+tr{
+    margin-bottom: 10px;
+}
+.fieldlabel{
+    margin: 10px;
+}
+.fieldinput{
+    margin: 10px;
+}
+td{
+    text-align: left;
+}
+#btn{
+    width: 40%;
+    background-color: #6666eb;
+    color: white;
+    height: 40px;
+    margin-top: 30px;
+}

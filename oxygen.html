@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/85db7100b3.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap5.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap5.min.css">
+    <title>Oxygen-suppliers Info</title>
+    <style>
+        .nav-link {
+            color: black !important;
+            padding: 20px !important;
+            font-size: 20px !important;
+        }
+
+        .nav-link:hover {
+            color: rgb(197, 31, 31) !important;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #d3d3d326 !important;
+        }
+
+        #example_wrapper {
+            margin: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav style="padding: 0;background-color: #c5e1a5b0 !important;"
+        class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation" style="    color: white !important;background-color: white;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <img src="https://www.thecompassforsbc.org/sites/default/files/COVID-19%20icon%202FINAL.png" alt="logo" width="70px">
+                <ul style="width: 100%; " class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="vaccine.html">Vaccines</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Emergency Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown"
+                            style="margin-left: 35px; padding: 10px;">
+                            <li><a class="dropdown-item" href="ambulance.html">Ambulance</a></li>
+                            <li><a class="dropdown-item" href="oxygen.html">Emergency Oxygen</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a style="cursor: pointer;" class="nav-link active" aria-current="page" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal1">Contact Us</a>
+
+                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div align="center" class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="row g-3">
+                                            <div class="col-md-12">
+                                                <label for="inputEmail4" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="inputEmail4">
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="inputAddress" class="form-label">Address</label>
+                                                <input type="text" class="form-control" id="inputAddress"
+                                                    placeholder="1234 Main St">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="inputCity" class="form-label">City</label>
+                                                <input type="text" class="form-control" id="inputCity">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="inputState" class="form-label">State</label>
+                                                <select id="inputState" class="form-select">
+                                                    <option selected value="AL">India</option>
+                                                    <option value="AL">Alabama</option>
+                                                    <option value="AK">Alaska</option>
+                                                    <option value="AZ">Arizona</option>
+                                                    <option value="AR">Arkansas</option>
+                                                    <option value="CA">California</option>
+                                                    <option value="CO">Colorado</option>
+                                                    <option value="CT">Connecticut</option>
+                                                    <option value="DE">Delaware</option>
+                                                    <option value="DC">District Of Columbia</option>
+                                                    <option value="FL">Florida</option>
+                                                    <option value="GA">Georgia</option>
+                                                    <option value="HI">Hawaii</option>
+                                                    <option value="ID">Idaho</option>
+                                                    <option value="IL">Illinois</option>
+                                                    <option value="IN">Indiana</option>
+                                                    <option value="IA">Iowa</option>
+                                                    <option value="KS">Kansas</option>
+                                                    <option value="KY">Kentucky</option>
+                                                    <option value="LA">Louisiana</option>
+                                                    <option value="ME">Maine</option>
+                                                    <option value="MD">Maryland</option>
+                                                    <option value="MA">Massachusetts</option>
+                                                    <option value="MI">Michigan</option>
+                                                    <option value="MN">Minnesota</option>
+                                                    <option value="MS">Mississippi</option>
+                                                    <option value="MO">Missouri</option>
+                                                    <option value="MT">Montana</option>
+                                                    <option value="NE">Nebraska</option>
+                                                    <option value="NV">Nevada</option>
+                                                    <option value="NH">New Hampshire</option>
+                                                    <option value="NJ">New Jersey</option>
+                                                    <option value="NM">New Mexico</option>
+                                                    <option value="NY">New York</option>
+                                                    <option value="NC">North Carolina</option>
+                                                    <option value="ND">North Dakota</option>
+                                                    <option value="OH">Ohio</option>
+                                                    <option value="OK">Oklahoma</option>
+                                                    <option value="OR">Oregon</option>
+                                                    <option value="PA">Pennsylvania</option>
+                                                    <option value="RI">Rhode Island</option>
+                                                    <option value="SC">South Carolina</option>
+                                                    <option value="SD">South Dakota</option>
+                                                    <option value="TN">Tennessee</option>
+                                                    <option value="TX">Texas</option>
+                                                    <option value="UT">Utah</option>
+                                                    <option value="VT">Vermont</option>
+                                                    <option value="VA">Virginia</option>
+                                                    <option value="WA">Washington</option>
+                                                    <option value="WV">West Virginia</option>
+                                                    <option value="WI">Wisconsin</option>
+                                                    <option value="WY">Wyoming</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label for="inputZip" class="form-label">Zip</label>
+                                                <input type="text" class="form-control" id="inputZip">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label for="exampleFormControlTextarea1"
+                                                    class="form-label">About</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                    rows="3"></textarea>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div style="width: 30%;" class="collapse navbar-collapse" id="navbarSupportedContent1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a id="gmail_link" class="nav-link" href="http://gmail.com">
+                            <i class="fas fa-envelope-square"></i>
+                            rajanyajoshi02@gmail.com</a>
+                    </li>
+                    <li style="padding:23px" class="nav-item active">
+                        <i class="fas fa-phone"></i> 9877632145
+                    </li>
+                    <li style="padding: 12px;" class="nav-item active">
+                        Date : <span id="date"></span><br>
+                        Time : <span id="time"></span>
+                    </li>
+                </ul>
+            </div>
+            <script>function display_ct7() {
+                    var x = new Date()
+                    var ampm = x.getHours() >= 12 ? ' PM' : ' AM';
+                    hours = x.getHours() % 12;
+                    hours = hours ? hours : 12;
+                    hours = hours.toString().length == 1 ? 0 + hours.toString() : hours;
+
+                    var minutes = x.getMinutes().toString()
+                    minutes = minutes.length == 1 ? 0 + minutes : minutes;
+
+                    var seconds = x.getSeconds().toString()
+                    seconds = seconds.length == 1 ? 0 + seconds : seconds;
+
+                    var month = (x.getMonth() + 1).toString();
+                    month = month.length == 1 ? 0 + month : month;
+
+                    var dt = x.getDate().toString();
+                    dt = dt.length == 1 ? 0 + dt : dt;
+
+                    var x1 = month + "/" + dt + "/" + x.getFullYear();
+                    document.getElementById('date').innerHTML = x1;
+                    x2 = hours + ":" + minutes + ":" + seconds + " " + ampm;
+                    document.getElementById('time').innerHTML = x2;
+                    display_c7();
+                }
+                function display_c7() {
+                    var refresh = 1000; // Refresh rate in milli seconds
+                    mytime = setTimeout('display_ct7()', refresh)
+                }
+                display_c7()
+            </script>
+        </div>
+    </nav>
+    <!--  <h2 align="center" style="padding: 0px !important; font-style: italic;">
+        Oxygen & Equipments Suppliers
+    </h2> -->
+    <table id="example" class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">S.no.</th>
+                <th scope="col">Ambulance Provider</th>
+                <th scope="col">Mobile Number</th>
+                <th scope="col">Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>M/s Vij & Sons</td>
+                <td>94635 36929</td>
+                <td>332-I, Sodal Rd, Preet Nagar, Shiv Nagar, Industrial Area, Jalandhar, Punjab 144004</td>
+
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Guru Nanak Oxygen Gas Depot</td>
+                <td>92168 03805</td>
+                <td>A- 10, New market, behind Central Fire Station, opp. Railway Station, Guru Arjan Dev Nagar,
+                    Ludhiana, Punjab 141008 </td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>R. K. Jindal </td>
+                <td>9891220211</td>
+                <td>E-37, Moti Nagar, Delhi</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Hitech Industries</td>
+                <td>9872100006, 987880060</td>
+                <td>Plot No. 315-316, SAS Nagar, Industrial Area Ph-9,Mohali</td>
+
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Shanti Traders</td>
+                <td>8054907631</td>
+                <td>SCO 12, Sector 7-C, Chandigarh</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>Shri Krishna Gas, Medical Oxygen Cylinder Supplier</td>
+                <td>92136 89725</td>
+                <td>Main Road, Near Dichaon Chowk, Nangloi - Najafgarh Rd, Najafgarh Park, Najafgarh, Delhi, 110043</td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td>Medilift Air Ambulance Services </td>
+                <td> 73670 20595</td>
+                <td> Dakshin Marg, 36A, Sector 36, Chandigarh, 160036</td>
+            </tr>
+            <tr>
+                <th scope="row">8</th>
+                <td>VAIBHAV OXYGEN</td>
+                <td>97181 02102</td>
+                <td>1151/1, Dayanand Colony New Railway Road, Gurugram Sector 4/7 Chowk INOX Mall, Gurugram, Haryana
+                    122006</td>
+            </tr>
+            <tr>
+                <th scope="row">9</th>
+                <td>OXY99</td>
+                <td>98106 26301</td>
+                <td> A 104/2, Sanjay Colony II, Pocket A, Sanjay Colony, Okhla Phase II, Okhla Industrial Area, New
+                    Delhi, Delhi 110020</td>
+            </tr>
+            <tr>
+                <th scope="row">10</th>
+                <td>MyOxy - Portable Oxygen Can, Portable Oxygen Cylinder</td>
+                <td>88757 90999</td>
+                <td>Nirvana Courtyard Business Centre 607-608, Tower C, 6th Floor Nirvana Courtyard, Sector 50,
+                    Gurugram, Haryana 122018</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

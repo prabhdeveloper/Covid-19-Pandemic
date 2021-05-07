@@ -1,0 +1,24 @@
+#home{
+    color: white;
+}
+#home:hover{
+    color: #a2d8cd;
+}
+#navbarDropdown{
+    color: white;
+}
+#navbarDropdown:hover{
+    color: #a2d8cd;
+}
+#about{
+    color: white;
+}
+#about:hover{
+    color: #a2d8cd;
+}
+#contact{
+    color: white;
+}
+#contact:hover{
+    color: #a2d8cd;
+}

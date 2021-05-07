@@ -1,0 +1,29 @@
+/* img{
+    float: left;
+    width: 30%;
+ }  */
+div{
+    border: 2px solid black;
+    
+    
+}
+.div{
+   
+   
+    width: 34%;
+    margin-left: 487px;
+}
+
+input{
+    border-radius: 15px;
+   
+    height: 38px;
+
+}
+table{
+    float: right;
+}
+input:focus{
+    outline: none;
+}
+.lg{ margin-top: 10px;}
